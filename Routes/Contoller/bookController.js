@@ -3,7 +3,7 @@ const Author = require('../models/author');
 
 exports.createBook = async (req, res, next) => {
     try {
-        const { title, author, isbn, availableCopies } = req.body;
+        const { title, author, isbn, available } = req.body;
 
         // Check if the author has more than 5 books
         const authorData = await Author.findById(author).populate('books');
